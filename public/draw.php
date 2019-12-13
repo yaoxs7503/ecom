@@ -1,0 +1,10 @@
+<?php
+  $im=imagecreatetruecolor(200,200);
+  $white=imagecolorallocate($im,255,255,255);
+  $blue=imagecolorallocate($im,0,0,64);
+  imageFill($im,0,0,$blue);
+  imageLine($im,0,0,200,200,$white);
+  imageString($im,4,50,150,'Sales',$white);
+  header('Content-type:image/png');
+  imagepng($im);
+?>
