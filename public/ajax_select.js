@@ -13,9 +13,9 @@ function check(){
   let select_op=document.getElementById("select_op").value;
   console.log(select_op);
   xmlHTTP=new XMLHttpRequest();
-  xmlHTTP.open("POST","jqajax_check.php?select_op="+select_op,true);
+  xmlHTTP.open("GET","jqajax_check.php?select_op="+select_op,true);
   xmlHTTP.onreadystatechange=function check_user(){
-    if(xmlHTTP.readyState==4){
+    if(xmlHTTP.readyState==4&&xmlHTTP.status==200){
         const str=xmlHTTP.responseText;
         document.getElementById("message").innerHTML=str;
     }
